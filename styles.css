@@ -26,10 +26,12 @@ body {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
   color: var(--text);
   background: radial-gradient(circle at top, #fff0f4 0%, #ffe2e8 25%, #ffd1dc 60%, #ffc1d1 100%);
+  overflow-x: hidden;
 }
 
 .page {
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .section {
