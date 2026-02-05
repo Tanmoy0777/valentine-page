@@ -15,6 +15,7 @@ const IDEA_KEY = "valentineIdeaSelection";
 const PROXIMITY_PX = 90;
 const SAFE_PADDING = 10;
 let isAccepted = false;
+let isFleeing = false;
 
 function getRandomPosition() {
   const area = buttons.getBoundingClientRect();
@@ -55,31 +56,15 @@ function getRandomPosition() {
 
 function moveNoButton() {
   if (isAccepted) return;
+  if (!isFleeing) {
+    isFleeing = true;
+    noBtn.classList.add("flee");
+  }
   const { x, y } = getRandomPosition();
   noBtn.style.left = `${x}px`;
   noBtn.style.top = `${y}px`;
 }
 
-function placeNoBesideYes() {
-  if (isAccepted) return;
-  const area = buttons.getBoundingClientRect();
-  const yes = yesBtn.getBoundingClientRect();
-  const no = noBtn.getBoundingClientRect();
-
-  const gap = 16;
-  let x = yes.left - area.left + yes.width + gap;
-  let y = yes.top - area.top;
-
-  if (x + no.width > area.width - SAFE_PADDING) {
-    x = yes.left - area.left - no.width - gap;
-  }
-
-  x = Math.max(SAFE_PADDING, Math.min(x, area.width - no.width - SAFE_PADDING));
-  y = Math.max(SAFE_PADDING, Math.min(y, area.height - no.height - SAFE_PADDING));
-
-  noBtn.style.left = `${x}px`;
-  noBtn.style.top = `${y}px`;
-}
 
 function distanceToButton(clientX, clientY) {
   const rect = noBtn.getBoundingClientRect();
@@ -161,7 +146,7 @@ buttons.addEventListener("touchmove", onTouchMove, { passive: true });
 
 window.addEventListener("resize", () => {
   if (isAccepted) return;
-  placeNoBesideYes();
+  if (isFleeing) moveNoButton();
 });
 
 yesBtn.addEventListener("click", acceptYes);
@@ -236,7 +221,6 @@ ideaCloseBtn.addEventListener("click", () => {
 });
 
 requestAnimationFrame(() => {
-  placeNoBesideYes();
   initCarouselFocus();
   restoreIdeaSelection();
 });

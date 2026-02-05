@@ -85,8 +85,10 @@ h2 {
   position: relative;
   height: 120px;
   width: 100%;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
 }
 
 .btn {
@@ -113,11 +115,15 @@ h2 {
 }
 
 .btn.no {
-  position: absolute;
+  position: static;
   background: white;
   color: var(--accent);
   border: 2px solid var(--accent);
   z-index: 2;
+}
+
+.btn.no.flee {
+  position: absolute;
 }
 
 .note {
