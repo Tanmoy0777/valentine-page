@@ -1,0 +1,24 @@
+# Ignore everything by default
+*
+
+# Keep core site files
+!index.html
+!styles.css
+!script.js
+
+# Keep photos used on the page
+!20240308_162056_Original.jpeg
+!IMG_1680.jpeg
+!IMG_3418.jpeg
+!IMG_3724.jpeg
+!IMG_3898 2.jpeg
+!IMG_3909.jpeg
+!IMG_4255 2.jpeg
+!IMG_4269.jpeg
+!IMG_4428.jpeg
+!IMG_4437.jpeg
+!IMG_5684 2.jpeg
+!IMG_5932 2.jpeg
+
+# Keep git metadata
+!.gitignore

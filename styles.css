@@ -1,0 +1,334 @@
+:root {
+  --bg1: #ff9a9e;
+  --bg2: #fad0c4;
+  --accent: #ff3b6b;
+  --accent-dark: #d92d57;
+  --text: #4a1534;
+  --card: rgba(255, 255, 255, 0.94);
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top, #fff0f4 0%, #ffe2e8 25%, #ffd1dc 60%, #ffc1d1 100%);
+}
+
+.page {
+  min-height: 100vh;
+}
+
+.section {
+  display: grid;
+  place-items: center;
+  padding: 28px 24px;
+}
+
+.page.locked .section:not(.hero) {
+  filter: blur(12px);
+  opacity: 0.6;
+  pointer-events: none;
+  user-select: none;
+}
+
+.hero {
+  position: relative;
+}
+
+.card {
+  position: relative;
+  width: min(92vw, 640px);
+  padding: 32px 26px 36px;
+  text-align: center;
+  background: var(--card);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+h1 {
+  margin: 0 0 10px;
+  font-size: clamp(28px, 4vw, 36px);
+}
+
+h2 {
+  margin: 0 0 10px;
+  font-size: clamp(22px, 3.2vw, 28px);
+}
+
+.subtitle {
+  margin: 0 0 20px;
+  font-size: 16px;
+}
+
+.accent {
+  color: var(--accent-dark);
+}
+
+.buttons {
+  position: relative;
+  height: 120px;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.btn {
+  padding: 12px 28px;
+  font-size: 18px;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn.yes {
+  background: var(--accent);
+  color: white;
+}
+
+.btn.yes:hover {
+  background: var(--accent-dark);
+}
+
+.btn.no {
+  position: absolute;
+  background: white;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  z-index: 2;
+}
+
+.note {
+  margin-top: 16px;
+}
+
+.hearts {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(255, 105, 180, 0.25) 0 10px, transparent 12px),
+    radial-gradient(circle at 80% 30%, rgba(255, 105, 180, 0.2) 0 14px, transparent 16px),
+    radial-gradient(circle at 30% 75%, rgba(255, 105, 180, 0.2) 0 12px, transparent 14px),
+    radial-gradient(circle at 70% 80%, rgba(255, 105, 180, 0.25) 0 10px, transparent 12px);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.floating-orbs {
+  position: absolute;
+  inset: -40px;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.45) 0 60px, transparent 70px),
+    radial-gradient(circle at 90% 30%, rgba(255, 255, 255, 0.35) 0 80px, transparent 90px),
+    radial-gradient(circle at 30% 85%, rgba(255, 255, 255, 0.25) 0 70px, transparent 85px);
+  animation: floaty 12s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes floaty {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.carousel {
+  margin-top: 10px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scroll-snap-type: x mandatory;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 14px;
+}
+
+.carousel-item {
+  position: relative;
+  min-width: min(78vw, 320px);
+  height: 230px;
+  border-radius: 18px;
+  overflow: hidden;
+  scroll-snap-align: center;
+  transform: scale(0.96);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.carousel-item figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px 14px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0));
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  opacity: 0.7;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  transform: translateY(6px);
+}
+
+.carousel-item.active {
+  transform: scale(1.04);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-item.active figcaption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.carousel-hint {
+  margin: 8px 0 0;
+  font-size: 14px;
+  color: rgba(74, 21, 52, 0.7);
+}
+
+.pill {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: rgba(255, 59, 107, 0.12);
+  color: var(--accent-dark);
+  font-weight: 600;
+}
+
+.ideas {
+  display: grid;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.idea {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: #fff7f9;
+  border: 1px solid rgba(255, 59, 107, 0.12);
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.idea img {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+.idea:hover,
+.idea:focus-visible {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 10px 18px rgba(255, 59, 107, 0.18);
+  outline: none;
+}
+
+.idea:disabled,
+.idea.is-locked {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.idea.is-selected {
+  border-color: rgba(255, 59, 107, 0.45);
+  box-shadow: 0 12px 20px rgba(255, 59, 107, 0.18);
+}
+
+.idea-title {
+  font-weight: 700;
+}
+
+.idea-sub {
+  font-size: 14px;
+  color: rgba(74, 21, 52, 0.7);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: grid;
+  place-items: center;
+  backdrop-filter: blur(4px);
+}
+
+.modal {
+  width: min(90vw, 420px);
+  background: white;
+  padding: 32px 28px;
+  border-radius: 22px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  background: rgba(255, 59, 107, 0.95);
+  color: white;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-size: 14px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+  z-index: 20;
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 28px 20px 32px;
+  }
+
+  .buttons {
+    height: 130px;
+  }
+
+  .carousel-item {
+    min-width: 82vw;
+    height: 210px;
+  }
+}

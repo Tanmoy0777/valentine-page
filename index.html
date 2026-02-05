@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Be My Valentine?</title>
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="description" content="A playful Valentine page" />
+  </head>
+  <body>
+    <main class="page locked" id="page">
+      <section class="section hero" id="hero" aria-live="polite">
+        <div class="hearts" aria-hidden="true"></div>
+        <div class="floating-orbs" aria-hidden="true"></div>
+        <div class="card">
+          <h1>Will you be my Valentine?</h1>
+          <p class="subtitle">I promise lots of smiles and sweet surprises.</p>
+
+          <div class="buttons" id="buttons">
+            <button class="btn yes" id="yesBtn">Yes</button>
+            <button class="btn no" id="noBtn" aria-label="No">No</button>
+          </div>
+
+          <div class="note" id="note" hidden>
+            <h2>You made the right choice!</h2>
+            <p>Happy Valentine’s Day! ❤️</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="good-choice">
+        <div class="card">
+          <h2 class="accent">Good choice babe 🙂</h2>
+          <p class="subtitle">You just unlocked unlimited hugs, kisses, and cuddles (redeemable very soon I promise).</p>
+          <div class="carousel" aria-label="Memories carousel">
+            <div class="carousel-track" id="carouselTrack">
+              <figure class="carousel-item">
+                <img src="IMG_1680.jpeg" alt="Memory 2" />
+                <figcaption>Smiles that feel like home.</figcaption>
+              </figure>
+              <figure class="carousel-item">
+                <img src="IMG_3418.jpeg" alt="Memory 3" />
+                <figcaption>Soft moments, loud hearts.</figcaption>
+              </figure>
+              <figure class="carousel-item">
+                <img src="IMG_5932 2.jpeg" alt="Memory 12" />
+                <figcaption>You’re my favorite story.</figcaption>
+              </figure>
+              <figure class="carousel-item">
+                <img src="IMG_3724.jpeg" alt="Memory 4" />
+                <figcaption>Every day is better with you.</figcaption>
+              </figure>
+              <figure class="carousel-item">
+                <img src="20240308_162056_Original.jpeg" alt="Memory 1" />
+                <figcaption>My favorite hello.</figcaption>
+              </figure>
+              <figure class="carousel-item">
+                <img src="IMG_3898 2.jpeg" alt="Memory 5" />
+                <figcaption>Proof that magic is real.</figcaption>
+              </figure>
+              <figure class="carousel-item">
+                <img src="IMG_3909.jpeg" alt="Memory 6" />
+                <figcaption>Best adventure partner ever.</figcaption>
+              </figure>
+              <figure class="carousel-item">
+                <img src="IMG_4437.jpeg" alt="Memory 10" />
+                <figcaption>Love in full color.</figcaption>
+              </figure>
+              <figure class="carousel-item">
+                <img src="IMG_4255 2.jpeg" alt="Memory 7" />
+                <figcaption>Our kind of perfect.</figcaption>
+              </figure>
+              <figure class="carousel-item">
+                <img src="IMG_4269.jpeg" alt="Memory 8" />
+                <figcaption>My favorite place is with you.</figcaption>
+              </figure>
+              <figure class="carousel-item">
+                <img src="IMG_4428.jpeg" alt="Memory 9" />
+                <figcaption>Forever looks good on us.</figcaption>
+              </figure>
+              <figure class="carousel-item">
+                <img src="IMG_5684 2.jpeg" alt="Memory 11" />
+                <figcaption>More of this, always.</figcaption>
+              </figure>
+            </div>
+          </div>
+          <p class="carousel-hint">Swipe to see our moments →</p>
+        </div>
+      </section>
+
+      <section class="section" id="forever">
+        <div class="card">
+          <h2>Now you’re stuck with me forever ∞</h2>
+          <p class="subtitle">Wait… do you want to change your mind? 😉</p>
+          <div class="pill">Absolutely not allowed</div>
+        </div>
+      </section>
+
+      <section class="section" id="ideas">
+        <div class="card">
+          <h2 class="accent">Our Date Ideas</h2>
+          <p class="subtitle">Pick your favorite — you get one sweet choice only 😉</p>
+          <div class="ideas" id="ideasList">
+            <button class="idea" type="button" data-idea="Dinner Plan">
+              <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='80'><rect width='80' height='80' rx='16' fill='%23ffe6ee'/><text x='40' y='50' font-size='34' text-anchor='middle'>🍽️</text></svg>" alt="Dinner" />
+              <div>
+                <div class="idea-title">Dinner Plan</div>
+                <div class="idea-sub">Candlelight, laughs, and dessert.</div>
+              </div>
+            </button>
+            <button class="idea" type="button" data-idea="Movie Plan">
+              <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='80'><rect width='80' height='80' rx='16' fill='%23ffe6ee'/><text x='40' y='50' font-size='34' text-anchor='middle'>🎬</text></svg>" alt="Movie" />
+              <div>
+                <div class="idea-title">Movie Plan</div>
+                <div class="idea-sub">Popcorn, blankets, and cuddles.</div>
+              </div>
+            </button>
+            <button class="idea" type="button" data-idea="Fun Day Out">
+              <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='80'><rect width='80' height='80' rx='16' fill='%23ffe6ee'/><text x='40' y='50' font-size='34' text-anchor='middle'>🌇</text></svg>" alt="Fun day out" />
+              <div>
+                <div class="idea-title">Fun Day Out</div>
+                <div class="idea-sub">Explore the city and make memories.</div>
+              </div>
+            </button>
+            <button class="idea" type="button" data-idea="Street Food Plan">
+              <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='80'><rect width='80' height='80' rx='16' fill='%23ffe6ee'/><text x='40' y='50' font-size='34' text-anchor='middle'>🌮</text></svg>" alt="Street food" />
+              <div>
+                <div class="idea-title">Street Food Plan</div>
+                <div class="idea-sub">Tiny bites, big smiles.</div>
+              </div>
+            </button>
+            <button class="idea" type="button" data-idea="Airbnb Plan">
+              <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='80'><rect width='80' height='80' rx='16' fill='%23ffe6ee'/><text x='40' y='50' font-size='34' text-anchor='middle'>🏡</text></svg>" alt="Airbnb" />
+              <div>
+                <div class="idea-title">Airbnb Plan</div>
+                <div class="idea-sub">A cozy staycation for us.</div>
+              </div>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="ending">
+        <div class="card">
+          <h2>Can’t wait to celebrate with you ❤️</h2>
+          <p class="subtitle">I know you’ll be busy on Valentine’s Day (Feb 14), so whenever your next free day is, I’d love to celebrate with you then.</p>
+          <p class="subtitle">Scroll back up anytime for a smile.</p>
+        </div>
+      </section>
+    </main>
+
+    <div class="overlay" id="overlay" hidden>
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <h2 id="modalTitle">You made the right choice!</h2>
+        <p>Yay! Thanks for saying yes. ❤️</p>
+        <button class="btn yes" id="closeBtn">Aww, close</button>
+      </div>
+    </div>
+
+    <div class="overlay" id="ideaOverlay" hidden>
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="ideaTitle">
+        <h2 id="ideaTitle">Great choice!</h2>
+        <p id="ideaMessage">Can’t wait to do that with you. ❤️</p>
+        <button class="btn yes" id="ideaCloseBtn">Yay!</button>
+      </div>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite" hidden>
+      Noted! I’ll plan it.
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
