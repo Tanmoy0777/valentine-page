@@ -87,8 +87,8 @@ h2 {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 16px;
+  justify-content: space-between;
+  padding: 0 28px;
 }
 
 .btn {
