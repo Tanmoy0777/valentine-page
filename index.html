@@ -8,7 +8,7 @@
     <meta name="description" content="A playful Valentine page" />
   </head>
   <body>
-    <main class="page locked" id="page">
+    <main class="page locked stage-0" id="page">
       <section class="section hero" id="hero" aria-live="polite">
         <div class="hearts" aria-hidden="true"></div>
         <div class="floating-orbs" aria-hidden="true"></div>
@@ -28,7 +28,7 @@
         </div>
       </section>
 
-      <section class="section" id="good-choice">
+      <section class="section" id="good-choice" data-unlock="1">
         <div class="card">
           <h2 class="accent">Good choice babe 🙂</h2>
           <p class="subtitle">You just unlocked unlimited hugs, kisses, and cuddles (redeemable very soon I promise).</p>
@@ -88,15 +88,17 @@
         </div>
       </section>
 
-      <section class="section" id="forever">
+      <section class="section" id="forever" data-unlock="1">
         <div class="card">
           <h2>Now you’re stuck with me forever ∞</h2>
           <p class="subtitle">Wait… do you want to change your mind? 😉</p>
-          <div class="pill">Absolutely not allowed</div>
+          <button class="btn yes mind-btn" id="changeMindBtn" type="button">
+            Yes, I want to change my mind
+          </button>
         </div>
       </section>
 
-      <section class="section" id="ideas">
+      <section class="section" id="ideas" data-unlock="2">
         <div class="card">
           <h2 class="accent">Our Date Ideas</h2>
           <p class="subtitle">Pick your favorite — you get one sweet choice only 😉</p>
@@ -140,7 +142,7 @@
         </div>
       </section>
 
-      <section class="section" id="ending">
+      <section class="section" id="ending" data-unlock="2">
         <div class="card">
           <h2>Can’t wait to celebrate with you ❤️</h2>
           <p class="subtitle">I know you’ll be busy on Valentine’s Day (Feb 14), so whenever your next free day is, I’d love to celebrate with you then.</p>

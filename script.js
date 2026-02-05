@@ -10,7 +10,9 @@ const ideaOverlay = document.getElementById("ideaOverlay");
 const ideaCloseBtn = document.getElementById("ideaCloseBtn");
 const ideaMessage = document.getElementById("ideaMessage");
 const toast = document.getElementById("toast");
+const changeMindBtn = document.getElementById("changeMindBtn");
 const IDEA_KEY = "valentineIdeaSelection";
+const MIND_KEY = "valentineMindChange";
 
 const PROXIMITY_PX = 90;
 const SAFE_PADDING = 10;
@@ -100,6 +102,8 @@ function acceptYes() {
   buttons.hidden = true;
   note.hidden = false;
   page.classList.remove("locked");
+  page.classList.remove("stage-0");
+  page.classList.add("stage-1");
   overlay.hidden = false;
 }
 
@@ -200,6 +204,22 @@ function showToast() {
   }, 2200);
 }
 
+function lockMindButton() {
+  if (!changeMindBtn) return;
+  changeMindBtn.textContent = "Ha-ha, nice joke. Absolutely not allowed.";
+  changeMindBtn.classList.add("is-locked");
+  changeMindBtn.disabled = true;
+}
+
+function restoreMindChoice() {
+  if (!changeMindBtn) return;
+  if (sessionStorage.getItem(MIND_KEY)) {
+    lockMindButton();
+    page.classList.remove("stage-1");
+    page.classList.add("stage-2");
+  }
+}
+
 if (ideasList) {
   ideasList.addEventListener("click", (event) => {
     const button = event.target.closest(".idea");
@@ -220,7 +240,18 @@ ideaCloseBtn.addEventListener("click", () => {
   ideaOverlay.hidden = true;
 });
 
+if (changeMindBtn) {
+  changeMindBtn.addEventListener("click", () => {
+    if (sessionStorage.getItem(MIND_KEY)) return;
+    sessionStorage.setItem(MIND_KEY, "locked");
+    lockMindButton();
+    page.classList.remove("stage-1");
+    page.classList.add("stage-2");
+  });
+}
+
 requestAnimationFrame(() => {
   initCarouselFocus();
   restoreIdeaSelection();
+  restoreMindChoice();
 });

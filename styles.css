@@ -47,6 +47,24 @@ body {
   user-select: none;
 }
 
+.page.stage-1 .section[data-unlock="2"] {
+  filter: blur(12px);
+  opacity: 0.6;
+  pointer-events: none;
+  user-select: none;
+}
+
+.mind-btn {
+  margin-top: 8px;
+}
+
+.mind-btn.is-locked {
+  background: #fff0f4;
+  color: var(--accent-dark);
+  box-shadow: none;
+  cursor: default;
+}
+
 .hero {
   position: relative;
 }
